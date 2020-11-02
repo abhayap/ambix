@@ -978,6 +978,7 @@ void Ambix_binauralAudioProcessor::LoadConfiguration(File configFile)
     _configFile = configFile;
     
     sendChangeMessage(); // notify editor
+    setParameterNotifyingHost(0, getParameter(0)); // this is a hack to make some hosts save the plugin state!
 
     /* save preset files as temporary .zip file, save this zip file later in the chunk if user wants to store preset within project */
     _tempConfigZipFile = _tempConfigZipFile.createTempFile(".zip");
